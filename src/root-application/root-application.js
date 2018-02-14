@@ -1,8 +1,8 @@
 import * as singleSpa from 'single-spa';
 
-singleSpa.registerApplication('app-1', () =>
+singleSpa.registerApplication('angular', () =>
   import ('../app1/angular1.app.js'), pathPrefix('/app1'));
-singleSpa.registerApplication('app-2', () =>
+singleSpa.registerApplication('vue', () =>
   import ('../app2/vue.app.js'), pathPrefix('/app2'));
 
 singleSpa.start();

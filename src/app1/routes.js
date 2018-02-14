@@ -1,7 +1,5 @@
 import angular from 'angular';
 import './root.component.js';
-import './gifs.component.js';
-import './lorem-ipsum.component.js';
 
 angular
 .module('single-spa-app')
@@ -12,19 +10,11 @@ angular
     requireBase: false,
   });
 
+  $locationProvider.hashPrefix('');
+
   $stateProvider
   .state('root', {
     url: '/app1',
     template: '<root />',
-  })
-
-  .state('root.gifs', {
-    url: '/gifs',
-    template: '<gifs />',
-  })
-
-  .state('root.lorem-ipsum', {
-    url: '/lorem-ipsum',
-    template: '<lorem-ipsum />',
   })
 });

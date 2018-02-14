@@ -6,11 +6,6 @@ const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin')
 module.exports = {
   entry: {
     'root-application': 'src/root-application/root-application.js',
-    'common-dependencies': [
-      'core-js/client/shim.min.js',
-      'angular',
-      'vue'
-    ],
   },
   output: {
     publicPath: '/dist/',
@@ -51,11 +46,8 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common-dependencies',
-    }),
-    new ContextReplacementPlugin(
-      /(.+)?angular(\\|\/)core(.+)?/,
-      path.resolve(__dirname, '../src')
-    )
+      minChunks: module => module.context && module.context.indexOf('node_modules') !== -1
+    })
   ],
   devtool: 'source-map',
   externals: [],

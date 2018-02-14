@@ -4,10 +4,9 @@
       "targets": {
         "browsers": ["last 2 versions"]
       }
-    }],
-    ["react"]
+    }]
   ],
   "plugins": [
-    "syntax-dynamic-import",
+    "syntax-dynamic-import"
   ]
 }
